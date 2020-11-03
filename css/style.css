@@ -1,0 +1,167 @@
+/* Custom imports */
+@font-face {
+  font-family: "Avenir-Light";
+  src: url(../fonts/AvenirLight.ttf) format("truetype");
+}
+
+header {
+  /* ANIMATED X */
+  /* ANIMATED X COLLAPSED */
+  /* END ANIMATED X */
+}
+
+header nav {
+  font-family: "Avenir-Light";
+  font-size: 1.9vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 10vmin -10px 50px grey, -10vmin -10px 50px grey;
+          box-shadow: 10vmin -10px 50px grey, -10vmin -10px 50px grey;
+}
+
+header nav li {
+  margin-left: 4vmin;
+}
+
+header nav li:nth-child(2),
+header nav li:nth-child(4) {
+  display: none;
+}
+
+header nav .navbar-nav {
+  -ms-flex-item-align: center !important;
+      -ms-grid-row-align: center !important;
+      align-self: center !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav .active {
+  color: #003778 !important;
+}
+
+header nav li a {
+  color: grey !important;
+}
+
+header nav li a:hover {
+  color: #003778 !important;
+}
+
+header nav .icon-bar {
+  width: 30px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border: 1.2px solid #003778;
+  background-color: #003778;
+  margin: 3px;
+  height: 3px;
+}
+
+header .navbar-toggler {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  outline: none !important;
+  border: none;
+  background: transparent !important;
+}
+
+header .navbar-toggler:hover {
+  background: transparent !important;
+}
+
+header .navbar-toggler .icon-bar {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+header .navbar-toggler.x .icon-bar:nth-of-type(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 5% 40%;
+          transform-origin: 5% 40%;
+}
+
+header .navbar-toggler.x .icon-bar:nth-of-type(2) {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+header .navbar-toggler.x .icon-bar:nth-of-type(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 10% 90%;
+          transform-origin: 10% 90%;
+}
+
+header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(1) {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(2) {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(3) {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+@media (max-width: 992px) {
+  header .navbar-collapse {
+    font-size: 1.4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 60%;
+    height: 100%;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .navbar-collapse li:nth-child(2),
+  header .navbar-collapse li:nth-child(4) {
+    display: block;
+  }
+  header .navbar-collapse.collapsing {
+    left: -75%;
+    -webkit-transition: height 0s ease;
+    transition: height 0s ease;
+  }
+  header .navbar-collapse.show {
+    left: 0;
+    -webkit-transition: left 300ms ease-in-out;
+    transition: left 300ms ease-in-out;
+  }
+  header .navbar-toggler.collapsed ~ .navbar-collapse {
+    -webkit-transition: left 500ms ease-in-out;
+    transition: left 500ms ease-in-out;
+  }
+  header li {
+    border-bottom: 0.5px solid lightgrey;
+  }
+}
+
+header .banner {
+  height: 60vmin;
+  width: 100vw;
+}
+/*# sourceMappingURL=style.css.map */
