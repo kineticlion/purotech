@@ -194,12 +194,14 @@ header .banner {
 .section-1-purotech .purotech-data .purotech-title,
 .section-2-meetpuro .purotech-data .purotech-title {
   padding: 0 2vmin;
+  margin-left: -4vmin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
 }
 
 .section-1-purotech .purotech-data .purotech-title .title-logo,
