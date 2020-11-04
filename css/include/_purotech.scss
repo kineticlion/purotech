@@ -1,0 +1,106 @@
+.section-1-purotech,
+.section-2-meetpuro {
+ text-align: center;
+
+ img {
+  &:nth-child(1) {
+   width: 40vmin;
+   margin: 3vmin 0;
+  }
+ }
+
+ .purotech-data {
+  padding: 0 6vmin;
+  .purotech-title {
+   padding: 0 2vmin;
+   display: flex;
+   justify-content: center;
+
+   .title-logo {
+    width: clamp(8vmin, 200px, 2vw);
+    margin-left: -20px;
+   }
+
+   .title-payment1 {
+    width: clamp(14vmin, 200px, 1vw);
+    align-self: center;
+    margin-left: 5px;
+   }
+
+   .title-payment2 {
+    width: clamp(19.5vmin, 200px, 1vw);
+    align-self: center;
+    margin-left: 5px;
+   }
+
+   .title-payment3 {
+    width: clamp(13vmin, 200px, 5vw);
+    align-self: center;
+    margin-left: 5px;
+   }
+  }
+
+  .purotech-info {
+   padding: 0 2vmin;
+   display: flex;
+   justify-content: center;
+   font-family: "Helvetica";
+   margin: 0;
+   margin-bottom: 2vmin;
+  }
+ }
+
+ .mobile {
+  background-color: $secondary-color;
+  height: 38vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+   &:nth-child(1) {
+    width: 50vmin;
+   }
+
+   &:nth-child(2) {
+    width: 20vmin;
+   }
+  }
+ }
+}
+
+.section-2-meetpuro {
+ .line {
+  border: 4px solid $primary-color;
+ }
+ .meetpuro-data {
+  padding: 0 6vmin;
+  img {
+   &:nth-child(1) {
+    width: 9vmin;
+    height: 9vmin;
+   }
+  }
+  .info-img {
+   width: clamp(10vh, 15vmin, 20vmin);
+   margin-bottom: 1vmin;
+   margin: 2vmin 0;
+  }
+  .info-img3 {
+   width: clamp(15vh, 22vmin, 25vmin);
+   margin: 2vmin 0;
+  }
+ }
+
+ .partners {
+  background-color: $secondary-color;
+  .partner-1 {
+   width: clamp(20vmin, 30vmin, 50vmin);
+  }
+  .partner-2 {
+   width: clamp(20vmin, 20vmin, 50vmin);
+  }
+  .partner-3 {
+   width: clamp(20vmin, 20vmin, 50vmin);
+  }
+ }
+}

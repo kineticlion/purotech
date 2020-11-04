@@ -4,6 +4,10 @@
   src: url(../fonts/AvenirLight.ttf) format("truetype");
 }
 
+.w-30 {
+  width: 35vmin;
+}
+
 header {
   /* ANIMATED X */
   /* ANIMATED X COLLAPSED */
@@ -12,12 +16,16 @@ header {
 
 header nav {
   font-family: "Avenir-Light";
-  font-size: 1.9vmin;
+  font-size: clamp(1.8vmin, 1.3vw, 4vw);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 10vmin -10px 50px grey, -10vmin -10px 50px grey;
-          box-shadow: 10vmin -10px 50px grey, -10vmin -10px 50px grey;
+  -webkit-box-shadow: 10vmin 0px 50px grey, -10vmin 0px 50px grey;
+          box-shadow: 10vmin 0px 50px grey, -10vmin 0px 50px grey;
+}
+
+header nav .navbar-brand img {
+  width: clamp(17vh, 20vmin, 25vmin) !important;
 }
 
 header nav li {
@@ -136,6 +144,8 @@ header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(3) {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    z-index: 2;
+    text-align: left;
   }
   header .navbar-collapse li:nth-child(2),
   header .navbar-collapse li:nth-child(4) {
@@ -163,5 +173,183 @@ header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(3) {
 header .banner {
   height: 60vmin;
   width: 100vw;
+}
+
+.section-1-purotech,
+.section-2-meetpuro {
+  text-align: center;
+}
+
+.section-1-purotech img:nth-child(1),
+.section-2-meetpuro img:nth-child(1) {
+  width: 40vmin;
+  margin: 3vmin 0;
+}
+
+.section-1-purotech .purotech-data,
+.section-2-meetpuro .purotech-data {
+  padding: 0 6vmin;
+}
+
+.section-1-purotech .purotech-data .purotech-title,
+.section-2-meetpuro .purotech-data .purotech-title {
+  padding: 0 2vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-1-purotech .purotech-data .purotech-title .title-logo,
+.section-2-meetpuro .purotech-data .purotech-title .title-logo {
+  width: clamp(8vmin, 200px, 2vw);
+  margin-left: -20px;
+}
+
+.section-1-purotech .purotech-data .purotech-title .title-payment1,
+.section-2-meetpuro .purotech-data .purotech-title .title-payment1 {
+  width: clamp(14vmin, 200px, 1vw);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 5px;
+}
+
+.section-1-purotech .purotech-data .purotech-title .title-payment2,
+.section-2-meetpuro .purotech-data .purotech-title .title-payment2 {
+  width: clamp(19.5vmin, 200px, 1vw);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 5px;
+}
+
+.section-1-purotech .purotech-data .purotech-title .title-payment3,
+.section-2-meetpuro .purotech-data .purotech-title .title-payment3 {
+  width: clamp(13vmin, 200px, 5vw);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 5px;
+}
+
+.section-1-purotech .purotech-data .purotech-info,
+.section-2-meetpuro .purotech-data .purotech-info {
+  padding: 0 2vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Helvetica";
+  margin: 0;
+  margin-bottom: 2vmin;
+}
+
+.section-1-purotech .mobile,
+.section-2-meetpuro .mobile {
+  background-color: #1f5595;
+  height: 38vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-1-purotech .mobile img:nth-child(1),
+.section-2-meetpuro .mobile img:nth-child(1) {
+  width: 50vmin;
+}
+
+.section-1-purotech .mobile img:nth-child(2),
+.section-2-meetpuro .mobile img:nth-child(2) {
+  width: 20vmin;
+}
+
+.section-2-meetpuro .line {
+  border: 4px solid #003778;
+}
+
+.section-2-meetpuro .meetpuro-data {
+  padding: 0 6vmin;
+}
+
+.section-2-meetpuro .meetpuro-data img:nth-child(1) {
+  width: 9vmin;
+  height: 9vmin;
+}
+
+.section-2-meetpuro .meetpuro-data .info-img {
+  width: clamp(10vh, 15vmin, 20vmin);
+  margin-bottom: 1vmin;
+  margin: 2vmin 0;
+}
+
+.section-2-meetpuro .meetpuro-data .info-img3 {
+  width: clamp(15vh, 22vmin, 25vmin);
+  margin: 2vmin 0;
+}
+
+.section-2-meetpuro .partners {
+  background-color: #1f5595;
+}
+
+.section-2-meetpuro .partners .partner-1 {
+  width: clamp(20vmin, 30vmin, 50vmin);
+}
+
+.section-2-meetpuro .partners .partner-2 {
+  width: clamp(20vmin, 20vmin, 50vmin);
+}
+
+.section-2-meetpuro .partners .partner-3 {
+  width: clamp(20vmin, 20vmin, 50vmin);
+}
+
+.getintouch .getintouch-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center a;
+      -ms-flex-pack: center a;
+          justify-content: center a;
+  justify-content-color: bg-secondary;
+}
+
+.getintouch .getintouch-item2 {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.getintouch .v-line {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 40px;
+  border: 2px solid #003778;
+}
+
+.getintouch .mapouter {
+  position: relative;
+  text-align: right;
+  height: 300px;
+  width: auto;
+}
+
+.getintouch .gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 300px;
+  width: auto;
 }
 /*# sourceMappingURL=style.css.map */

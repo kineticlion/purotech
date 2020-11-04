@@ -1,0 +1,143 @@
+header {
+ nav {
+  font-family: $font-avenir-light;
+  font-size: clamp(1.8vmin, 1.3vw, 4vw);
+  display: flex;
+  box-shadow: 10vmin 0px 50px grey, -10vmin 0px 50px grey;
+
+  .navbar-brand {
+   img {
+    width: clamp(17vh, 20vmin, 25vmin) !important;
+   }
+  }
+
+  li {
+   margin-left: 4vmin;
+  }
+
+  li:nth-child(2),
+  li:nth-child(4) {
+   display: none;
+  }
+
+  .navbar-nav {
+   align-self: center !important;
+   justify-content: center;
+  }
+
+  .active {
+   color: $primary-color !important;
+  }
+
+  li a {
+   color: grey !important;
+   &:hover {
+    color: $primary-color !important;
+   }
+  }
+
+  .icon-bar {
+   width: 30px;
+   -webkit-transition: all 0.2s;
+   transition: all 0.2s;
+   border: 1.2px solid $primary-color;
+   background-color: $primary-color;
+   margin: 3px;
+   height: 3px;
+  }
+ }
+
+ .navbar-toggler {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  outline: none !important;
+  border: none;
+  background: transparent !important;
+ }
+
+ .navbar-toggler:hover {
+  background: transparent !important;
+ }
+
+ .navbar-toggler .icon-bar {
+  transition: all 0.2s;
+ }
+
+ /* ANIMATED X */
+ .navbar-toggler.x .icon-bar:nth-of-type(1) {
+  transform: rotate(45deg);
+  transform-origin: 5% 40%;
+ }
+
+ .navbar-toggler.x .icon-bar:nth-of-type(2) {
+  opacity: 0;
+  filter: alpha(opacity=0);
+ }
+
+ .navbar-toggler.x .icon-bar:nth-of-type(3) {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+ }
+
+ /* ANIMATED X COLLAPSED */
+ .navbar-toggler.x.collapsed .icon-bar:nth-of-type(1) {
+  transform: rotate(0);
+ }
+
+ .navbar-toggler.x.collapsed .icon-bar:nth-of-type(2) {
+  opacity: 1;
+  filter: alpha(opacity=100);
+ }
+
+ .navbar-toggler.x.collapsed .icon-bar:nth-of-type(3) {
+  transform: rotate(0);
+ }
+ /* END ANIMATED X */
+
+ @media (max-width: 992px) {
+  .navbar-collapse {
+   font-size: 1.4rem;
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding-left: 15px;
+   padding-right: 15px;
+   padding-bottom: 15px;
+   width: 60%;
+   height: 100%;
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   z-index: 2;
+   text-align: left;
+   li:nth-child(2),
+   li:nth-child(4) {
+    display: block;
+   }
+  }
+
+  .navbar-collapse.collapsing {
+   left: -75%;
+   transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+   left: 0;
+   transition: left 300ms ease-in-out;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+   transition: left 500ms ease-in-out;
+  }
+
+  li {
+   border-bottom: 0.5px solid lightgrey;
+  }
+ }
+
+ .banner {
+  height: 60vmin;
+  width: 100vw;
+ }
+}
