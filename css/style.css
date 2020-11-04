@@ -194,7 +194,7 @@ header .banner {
 .section-1-purotech .purotech-data .purotech-title,
 .section-2-meetpuro .purotech-data .purotech-title {
   padding: 0 2vmin;
-  margin-left: -4vmin;
+  margin-left: -6vmin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,12 +207,12 @@ header .banner {
 .section-1-purotech .purotech-data .purotech-title .title-logo,
 .section-2-meetpuro .purotech-data .purotech-title .title-logo {
   width: auto;
-  height: 8vmin;
+  height: 5.5vh;
 }
 
 .section-1-purotech .purotech-data .purotech-title .title-payment1,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment1 {
-  width: 15vmin;
+  width: 6.5vh;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -220,7 +220,7 @@ header .banner {
 
 .section-1-purotech .purotech-data .purotech-title .title-payment2,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment2 {
-  width: 17vmin;
+  width: 8vh;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -228,7 +228,7 @@ header .banner {
 
 .section-1-purotech .purotech-data .purotech-title .title-payment3,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment3 {
-  width: 13vmin;
+  width: 5.5vh;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -274,7 +274,8 @@ header .banner {
 }
 
 .section-2-meetpuro .line {
-  border: 4px solid #003778;
+  border: 0.2vmin solid #003778;
+  background-color: #003778;
 }
 
 .section-2-meetpuro .meetpuro-data {
@@ -282,17 +283,22 @@ header .banner {
 }
 
 .section-2-meetpuro .meetpuro-data .meet-img {
-  padding: 5vmin;
+  width: auto;
+  height: 10vmin;
+  margin: 1vmin 0;
 }
 
 .section-2-meetpuro .meetpuro-data .info-img {
-  width: clamp(10vh, 15vmin, 20vmin);
+  width: auto;
+  height: 2vh;
   margin-bottom: 1vmin;
   margin: 2vmin 0;
 }
 
 .section-2-meetpuro .meetpuro-data .info-img3 {
-  width: clamp(15vh, 22vmin, 25vmin);
+  width: auto;
+  height: 2vh;
+  margin-bottom: 1vmin;
   margin: 2vmin 0;
 }
 
