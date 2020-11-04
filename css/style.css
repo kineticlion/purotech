@@ -180,10 +180,10 @@ header .banner {
   text-align: center;
 }
 
-.section-1-purotech img:nth-child(1),
-.section-2-meetpuro img:nth-child(1) {
-  width: 40vmin;
-  margin: 3vmin 0;
+.section-1-purotech .section-img,
+.section-2-meetpuro .section-img {
+  width: 32vmin;
+  margin-bottom: 7vmin;
 }
 
 .section-1-purotech .purotech-data,
@@ -204,35 +204,32 @@ header .banner {
 
 .section-1-purotech .purotech-data .purotech-title .title-logo,
 .section-2-meetpuro .purotech-data .purotech-title .title-logo {
-  width: clamp(8vmin, 200px, 2vw);
-  margin-left: -20px;
+  width: auto;
+  height: 8vmin;
 }
 
 .section-1-purotech .purotech-data .purotech-title .title-payment1,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment1 {
-  width: clamp(14vmin, 200px, 1vw);
+  width: 15vmin;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-left: 5px;
 }
 
 .section-1-purotech .purotech-data .purotech-title .title-payment2,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment2 {
-  width: clamp(19.5vmin, 200px, 1vw);
+  width: 17vmin;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-left: 5px;
 }
 
 .section-1-purotech .purotech-data .purotech-title .title-payment3,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment3 {
-  width: clamp(13vmin, 200px, 5vw);
+  width: 13vmin;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-left: 5px;
 }
 
 .section-1-purotech .purotech-data .purotech-info,
@@ -245,8 +242,8 @@ header .banner {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: "Helvetica";
-  margin: 0;
-  margin-bottom: 2vmin;
+  margin-top: 1vmin;
+  margin: 2vmin 0;
 }
 
 .section-1-purotech .mobile,
@@ -282,9 +279,8 @@ header .banner {
   padding: 0 6vmin;
 }
 
-.section-2-meetpuro .meetpuro-data img:nth-child(1) {
-  width: 9vmin;
-  height: 9vmin;
+.section-2-meetpuro .meetpuro-data .meet-img {
+  padding: 5vmin;
 }
 
 .section-2-meetpuro .meetpuro-data .info-img {

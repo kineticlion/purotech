@@ -2,11 +2,9 @@
 .section-2-meetpuro {
  text-align: center;
 
- img {
-  &:nth-child(1) {
-   width: 40vmin;
-   margin: 3vmin 0;
-  }
+ .section-img {
+  width: 32vmin;
+  margin-bottom: 7vmin;
  }
 
  .purotech-data {
@@ -17,26 +15,23 @@
    justify-content: center;
 
    .title-logo {
-    width: clamp(8vmin, 200px, 2vw);
-    margin-left: -20px;
+    width: auto;
+    height: 8vmin;
    }
 
    .title-payment1 {
-    width: clamp(14vmin, 200px, 1vw);
+    width: 15vmin;
     align-self: center;
-    margin-left: 5px;
    }
 
    .title-payment2 {
-    width: clamp(19.5vmin, 200px, 1vw);
+    width: 17vmin;
     align-self: center;
-    margin-left: 5px;
    }
 
    .title-payment3 {
-    width: clamp(13vmin, 200px, 5vw);
+    width: 13vmin;
     align-self: center;
-    margin-left: 5px;
    }
   }
 
@@ -45,8 +40,8 @@
    display: flex;
    justify-content: center;
    font-family: "Helvetica";
-   margin: 0;
-   margin-bottom: 2vmin;
+   margin-top: 1vmin;
+   margin: 2vmin 0;
   }
  }
 
@@ -74,12 +69,11 @@
  }
  .meetpuro-data {
   padding: 0 6vmin;
-  img {
-   &:nth-child(1) {
-    width: 9vmin;
-    height: 9vmin;
-   }
+
+  .meet-img {
+   padding: 5vmin;
   }
+
   .info-img {
    width: clamp(10vh, 15vmin, 20vmin);
    margin-bottom: 1vmin;
