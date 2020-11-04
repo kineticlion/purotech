@@ -3,3 +3,7 @@
 @import "./include/header";
 @import "./include/purotech";
 @import "./include/getintouch";
+
+html {
+ scroll-behavior: smooth;
+}

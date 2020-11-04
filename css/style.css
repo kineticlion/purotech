@@ -348,4 +348,8 @@ header .banner {
   height: 300px;
   width: auto;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 /*# sourceMappingURL=style.css.map */
