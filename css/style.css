@@ -325,10 +325,17 @@ header .banner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center a;
-      -ms-flex-pack: center a;
-          justify-content: center a;
-  justify-content-color: bg-secondary;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.getintouch .getintouch-item a {
+  color: #003778;
+}
+
+.getintouch .getintouch-item a:hover {
+  color: #1f5595;
 }
 
 .getintouch .getintouch-item2 {

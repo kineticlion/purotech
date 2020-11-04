@@ -2,8 +2,12 @@
  .getintouch-item {
   display: flex;
   align-items: center;
-  justify-content: center a {
-   color: bg-secondary;
+  justify-content: center;
+  a {
+   color: $primary-color;
+   &:hover {
+    color: $secondary-color;
+   }
   }
  }
 
