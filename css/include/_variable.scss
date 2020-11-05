@@ -22,3 +22,11 @@ $secondary-color: rgb(31, 85, 149);
 .section-img {
  width: 50vmin;
 }
+
+.bg-primary-1 {
+ background-color: $primary-color;
+}
+
+.bg-secondary-1 {
+ background-color: $secondary-color;
+}

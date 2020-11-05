@@ -1,0 +1,39 @@
+footer {
+ font-size: 0.9rem;
+ font-family: $font-avenir-light;
+ line-height: 1.2em;
+ .line {
+  width: 100%;
+  border: 3px solid white;
+ }
+ .footer-img {
+  width: auto;
+  height: 80px;
+ }
+ .footer-container {
+  width: 60vmin;
+ }
+
+ .social-links {
+  display: flex;
+  justify-content: center;
+  img {
+   width: auto;
+   height: 33px;
+  }
+ }
+}
+
+@media (max-width: 768px) {
+ .line2,
+ .footer-title2,
+ .footer-title1 {
+  display: none;
+ }
+ .footer-container {
+  width: 95% !important;
+ }
+ .footer-img {
+  margin-top: 15px;
+ }
+}
