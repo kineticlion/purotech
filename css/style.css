@@ -8,6 +8,10 @@
   width: 35vmin;
 }
 
+.section-img {
+  width: 50vmin;
+}
+
 header {
   /* ANIMATED X */
   /* ANIMATED X COLLAPSED */
@@ -182,7 +186,7 @@ header .banner {
 
 .section-1-purotech .section-img,
 .section-2-meetpuro .section-img {
-  width: 32vmin;
+  width: 50vmin;
   margin-bottom: 7vmin;
 }
 
@@ -194,7 +198,7 @@ header .banner {
 .section-1-purotech .purotech-data .purotech-title,
 .section-2-meetpuro .purotech-data .purotech-title {
   padding: 0 2vmin;
-  margin-left: -6vmin;
+  margin-left: -2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,12 +211,15 @@ header .banner {
 .section-1-purotech .purotech-data .purotech-title .title-logo,
 .section-2-meetpuro .purotech-data .purotech-title .title-logo {
   width: auto;
-  height: 5.5vh;
+  height: 9.5vmin;
+  min-height: 50px;
 }
 
 .section-1-purotech .purotech-data .purotech-title .title-payment1,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment1 {
-  width: 6.5vh;
+  width: auto;
+  height: 5vmin;
+  min-height: 10px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -220,7 +227,9 @@ header .banner {
 
 .section-1-purotech .purotech-data .purotech-title .title-payment2,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment2 {
-  width: 8vh;
+  width: auto;
+  height: 5vmin;
+  min-height: 25px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -228,7 +237,9 @@ header .banner {
 
 .section-1-purotech .purotech-data .purotech-title .title-payment3,
 .section-2-meetpuro .purotech-data .purotech-title .title-payment3 {
-  width: 5.5vh;
+  width: auto;
+  height: 5vmin;
+  min-height: 25px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -271,6 +282,10 @@ header .banner {
 .section-1-purotech .mobile img:nth-child(2),
 .section-2-meetpuro .mobile img:nth-child(2) {
   width: 20vmin;
+}
+
+.section-2-meetpuro {
+  color: #1f5595;
 }
 
 .section-2-meetpuro .line {
