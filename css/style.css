@@ -395,8 +395,8 @@ header .banner {
 }
 
 .requestdemo form {
-  font-style: italic;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   font-family: "Palatino-Linotype";
 }
 
