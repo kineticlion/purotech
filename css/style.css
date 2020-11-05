@@ -444,8 +444,8 @@ header .banner {
   border-color: #003778;
 }
 
-.requestdemo form .form-check-input {
-  height: 0.1rem;
+.requestdemo form .custom-checkbox .custom-control-label:hover {
+  cursor: pointer;
 }
 
 .requestdemo form button {

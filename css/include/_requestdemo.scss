@@ -49,8 +49,8 @@
    border-color: $primary-color;
   }
 
-  .form-check-input {
-   height: 0.1rem;
+  .custom-checkbox .custom-control-label:hover {
+   cursor: pointer;
   }
 
   button {
