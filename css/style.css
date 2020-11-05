@@ -505,6 +505,7 @@ footer .social-links {
 footer .social-links img {
   width: auto;
   height: 33px;
+  margin-right: 5px;
 }
 
 @media (max-width: 768px) {
