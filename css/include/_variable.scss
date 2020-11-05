@@ -1,11 +1,17 @@
 @font-face {
  font-family: "Avenir-Light";
- src: url(../fonts/AvenirLight.ttf) format("truetype");
+ src: url(../../fonts/AvenirLight.ttf) format("truetype");
+}
+
+@font-face {
+ font-family: "Palatino-Linotype";
+ src: url(../../fonts/PalatinoLinotype.ttf) format("truetype");
 }
 
 $font-avenir-light: "Avenir-Light";
+$font-palatino-linotype: "Palatino-Linotype";
 
-$primary-color: #003778;
+$primary-color: rgb(0, 55, 120);
 $secondary-color: rgb(31, 85, 149);
 
 //Classes

@@ -1,7 +1,12 @@
 /* Custom imports */
 @font-face {
   font-family: "Avenir-Light";
-  src: url(../fonts/AvenirLight.ttf) format("truetype");
+  src: url(../../fonts/AvenirLight.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Palatino-Linotype";
+  src: url(../../fonts/PalatinoLinotype.ttf) format("truetype");
 }
 
 .w-30 {
@@ -377,6 +382,87 @@ header .banner {
   background: none !important;
   height: 300px;
   width: auto;
+}
+
+.requestdemo {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.requestdemo > p {
+  color: #1f5595;
+  font-size: clamp(20px, 2vmin, 2rem);
+}
+
+.requestdemo form {
+  font-style: italic;
+  font-size: 1rem;
+  font-family: "Palatino-Linotype";
+}
+
+.requestdemo form .form-control {
+  border: 1px solid #1f5595;
+  border-radius: 0;
+}
+
+.requestdemo form .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.requestdemo form .form-control:hover {
+  outline: 2px solid #003778;
+  border-color: transparent;
+}
+
+.requestdemo form .custom-control-input-black:focus ~ .custom-control-label::before {
+  border-color: #1f5595 !important;
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(31, 85, 149, 0.6) !important;
+          box-shadow: 0 0 0 0.1rem rgba(31, 85, 149, 0.6) !important;
+}
+
+.requestdemo form .custom-control-input-black:checked ~ .custom-control-label::before {
+  border-color: #003778 !important;
+  background-color: white !important;
+}
+
+.requestdemo form .custom-control-input-black:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: white !important;
+}
+
+.requestdemo form .custom-control-input-black:not(:disabled):active ~ .custom-control-label::before {
+  background-color: white !important;
+  border-color: black !important;
+}
+
+.requestdemo form .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='black' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
+.requestdemo form .custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  border-color: #003778;
+}
+
+.requestdemo form .form-check-input {
+  height: 0.1rem;
+}
+
+.requestdemo form button {
+  border-radius: 0;
+  border: none;
+  padding: 1rem 2rem;
+  color: white;
+  background-color: #003778;
+}
+
+.requestdemo form input {
+  height: 32px;
+  padding: 1rem !important;
+}
+
+.requestdemo form textarea {
+  resize: none;
 }
 
 html {
