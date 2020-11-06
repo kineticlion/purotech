@@ -57,10 +57,11 @@
    border-radius: 0;
    border: none;
    padding: 1rem 2rem;
-   color: white;
+   color: white !important;
    background-color: $primary-color;
 
    &:active,
+   :hover,
    :focus {
     background-color: $secondary-color !important;
    }
@@ -74,5 +75,10 @@
   textarea {
    resize: none;
   }
+ }
+
+ #formSubmitMessage {
+  font-size: 1rem;
+  color: $primary-color;
  }
 }

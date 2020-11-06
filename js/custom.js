@@ -85,58 +85,55 @@ navLinks.forEach(link =>
 
 //FORM
 
-const validateInputs = () => {
-  const firstName = document.getElementById('firstName');
-  const firstNameValue = firstName.value.trim();
-  const lastName = document.getElementById('lastName');
-  const lastNameValue = lastName.value.trim();
-  const phone = document.getElementById('email');
-  const email = document.getElementById('phone');
-  const emailValue = email.value.trim();
-  const phoneValue = phone.value.trim();
-  
-  if (!firstNameValue || firstNameValue === '') {
-    if (!firstName.classList.contains('error')) {
-      firstName.classList.add('error');
-      }
-  } else {
-    firstName.classList.remove('error')
-  }
 
-  if (!lastNameValue || lastNameValue === '') {
-    if (!lastName.classList.contains('error')) {
-      lastName.classList.add('error');
-      }
-  } else {
-    lastName.classList.remove('error')
-  }
+const firstName = document.querySelector('#firstName');
+const lastName = document.querySelector('#lastName');
+const email = document.querySelector('#email');
+const formSubmitMessage = document.querySelector('#formSubmitMessage');
+
+const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|in|io)\b/;
+const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
 
-
-
-  const emailPatterm = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|in|io)\b/;
-  if (!emailValue.match(emailPatterm)) {
-    if (!email.classList.contains('error')) {
-      email.classList.add('error');
-    } else {
-      email.classList.remove('error');
-      }
-  }
-
-  const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-  if (!phoneValue.match(phonePattern)) {
-    phone.classList.add('error');
-  } else {
-    phone.classList.remove('error');
-  }
+const validate = (...inputs) => {
+  let isValidated = true;
+  inputs.forEach(input => {
+    switch (input.id) {
+      case 'firstName':
+      case 'lastName':
+        !input.value ? input.classList.add('error') : input.classList.remove('error');
+        break;
+      case 'email':
+        input.value.match(emailPattern) === null || !input.value ? input.classList.add('error') : input.classList.remove('error');
+        break;
+      case 'phone':
+        input.value.match(phonePattern) === null || !input.value ? input.classList.add('error') : input.classList.remove('error');
+      default:
+        return false;
+    }
+    if (input.classList.contains('error')) isValidated = false;
+  })
+  return isValidated;
 }
 
+const addListeners = (...inputs) => {
+  inputs.forEach(input => {
+    console.log(input)
+    input.addEventListener('input', () => {
+      validate(input);
+    })
+  })
+}
 
-document.getElementById("mainForm").addEventListener("submit", e => {
+addListeners(firstName, lastName, email, phone);
+
+
+document.querySelector('#mainForm').addEventListener('submit', (e) => {
   e.preventDefault();
-  
-  validateInputs();
- console.log("Form submitted");
-});
+  const isValidated = validate(firstName, lastName, email, phone);
+  if (isValidated) formSubmitMessage.innerHTML = "Thanks for submitting!";
+})
+
+
 
 

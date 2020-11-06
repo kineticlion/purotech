@@ -602,11 +602,12 @@ header .banner {
   border-radius: 0;
   border: none;
   padding: 1rem 2rem;
-  color: white;
+  color: white !important;
   background-color: #003778;
 }
 
 .requestdemo form button:active,
+.requestdemo form button :hover,
 .requestdemo form button :focus {
   background-color: #1f5595 !important;
 }
@@ -618,6 +619,11 @@ header .banner {
 
 .requestdemo form textarea {
   resize: none;
+}
+
+.requestdemo #formSubmitMessage {
+  font-size: 1rem;
+  color: #003778;
 }
 
 footer {
