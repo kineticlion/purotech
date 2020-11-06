@@ -30,3 +30,7 @@ $secondary-color: rgb(31, 85, 149);
 .bg-secondary-1 {
  background-color: $secondary-color;
 }
+
+.active-indicator {
+ background-color: $primary-color;
+}

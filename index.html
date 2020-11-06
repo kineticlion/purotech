@@ -14,11 +14,11 @@
  </head>
  <body>
   <!--Navbar-->
-  <header>
+  <header id="home">
    <nav class="navbar navbar-expand-lg navbar-light p-4">
     <div class="container d-flex align-items-end">
      <a class="navbar-brand" href="#"><img src="./images/logo.png" /></a>
-     <button type="button" class="navbar-toggler x collapsed" data-toggle="collapse" data-target="#navbarNav">
+     <button id="navbar-toggler" type="button" class="navbar-toggler x collapsed" data-toggle="collapse" data-target="#navbarNav">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -53,9 +53,41 @@
    </div>
   </header>
 
+  <section id="scroll-indicator">
+   <nav>
+    <ul>
+     <a href="#home">
+      <li>
+       <span> </span>
+      </li>
+     </a>
+     <a href="#purotech">
+      <li>
+       <span> </span>
+      </li>
+     </a>
+     <a href="#about">
+      <li>
+       <span> </span>
+      </li>
+     </a>
+     <a href="#getintouch">
+      <li>
+       <span> </span>
+      </li>
+     </a>
+     <a href="#requestdemo">
+      <li>
+       <span></span>
+      </li>
+     </a>
+    </ul>
+   </nav>
+  </section>
+
   <main>
    <!--Purotech Container-->
-   <div class="section-1-purotech container-fluid p-0">
+   <div class="section-1-purotech container-fluid p-0" id="purotech">
     <div class="container py-5 p-0 purotech">
      <img src="images/purotech/purotech.jpg" class="section-img w-30 img-fluid" />
      <div class="container-fluid px-4 pb-2">
@@ -99,7 +131,7 @@
    </div>
 
    <!--Meet Puro-->
-   <div class="section-2-meetpuro container-fluid p-0">
+   <div class="section-2-meetpuro container-fluid p-0" id="about">
     <div class="container px-3 py-5 p-0 purotech">
      <img src="./images/meet-puro/meet-puro.jpg" class="section-img img-fluid w-30" />
      <div class="container-fluid px-4 pb-2">
@@ -150,7 +182,7 @@
    </div>
 
    <!--Get in Touch-->
-   <div class="container-fluid getintouch p-0 py-5 text-center">
+   <div class="container-fluid getintouch p-0 py-5 text-center" id="getintouch">
     <img src="./images/getintouch/Touch.jpg" class="img-fluid section-img mb-3" />
     <div class="container p-0 py-4 px-5">
      <div class="row getintouch-container">
@@ -191,7 +223,7 @@
    </div>
 
    <!--Request Demo-->
-   <div class="container requestdemo p-0 py-5 text-center">
+   <div class="container requestdemo p-0 py-5 text-center" id="requestdemo">
     <img src="./images/requestdemo/demo.jpg" class="img-fluid section-img" />
     <p>Please fill your contact details below:</p>
     <div class="container pt-4 form px-5">
@@ -304,9 +336,21 @@
    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
    crossorigin="anonymous"
   ></script>
-
+  <!--GSAP-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <!--Custom JS-->
   <script>
+   const toggleButton = document.getElementById("navbar-toggler");
+   const navLinks = document.querySelectorAll(".nav-item");
+   navLinks.forEach(link =>
+    link.addEventListener("click", () => {
+     if (window.innerWidth < 992) {
+      //   toggleButton.click();
+      //   gsap.to("#about", { duration: 1 });
+     }
+    })
+   );
+
    document.getElementById("mainForm").addEventListener("submit", e => {
     e.preventDefault();
     console.log("Form submitted");

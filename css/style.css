@@ -25,7 +25,12 @@
   background-color: #1f5595;
 }
 
+.active-indicator {
+  background-color: #003778;
+}
+
 header {
+  position: relative;
   /* ANIMATED X */
   /* ANIMATED X COLLAPSED */
   /* END ANIMATED X */
@@ -190,6 +195,37 @@ header .navbar-toggler.x.collapsed .icon-bar:nth-of-type(3) {
 header .banner {
   height: 60vmin;
   width: 100vw;
+}
+
+#scroll-indicator nav {
+  position: fixed;
+  top: 2%;
+  right: 0%;
+  z-index: 1;
+}
+
+#scroll-indicator nav ul {
+  list-style-type: none;
+}
+
+@media (max-width: 993px) {
+  #scroll-indicator nav ul {
+    display: none;
+  }
+}
+
+#scroll-indicator nav li {
+  height: 12px;
+  width: 12px;
+  margin: 25px;
+}
+
+#scroll-indicator nav span {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border: 2px solid #003778;
+  border-radius: 50%;
 }
 
 .section-1-purotech,
