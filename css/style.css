@@ -29,6 +29,11 @@
   background-color: #003778;
 }
 
+.error {
+  outline: 2px solid red;
+  border: none !important;
+}
+
 .scroll-indicator-controller {
   position: fixed;
   top: 9%;
@@ -601,6 +606,11 @@ header .banner {
   background-color: #003778;
 }
 
+.requestdemo form button:active,
+.requestdemo form button :focus {
+  background-color: #1f5595 !important;
+}
+
 .requestdemo form input {
   height: 32px;
   padding: 1rem !important;
@@ -627,7 +637,7 @@ footer .footer-img {
 }
 
 footer .footer-container {
-  width: 60vmin;
+  width: 60%;
 }
 
 footer .social-links {

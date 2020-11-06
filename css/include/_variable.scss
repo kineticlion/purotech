@@ -34,3 +34,8 @@ $secondary-color: rgb(31, 85, 149);
 .active-indicator {
  background-color: $primary-color;
 }
+
+.error {
+ outline: 2px solid red;
+ border: none !important;
+}
