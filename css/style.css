@@ -149,7 +149,7 @@ header nav {
 }
 
 header nav .navbar-brand img {
-  width: clamp(17vh, 20vmin, 25vmin) !important;
+  width: clamp(200px, 20vmin, 30vmin) !important;
 }
 
 header nav li {
