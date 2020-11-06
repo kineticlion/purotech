@@ -4,7 +4,11 @@ header {
   font-family: $font-avenir-light;
   font-size: clamp(1.8vmin, 1.3vw, 4vw);
   display: flex;
-  box-shadow: 10vmin 0px 50px grey, -10vmin 0px 50px grey;
+  position: fixed !important;
+  z-index: 2;
+  top: 0;
+  right: 0%;
+  width: 100%;
 
   .navbar-brand {
    img {
@@ -46,6 +50,10 @@ header {
    margin: 3px;
    height: 3px;
   }
+ }
+
+ #main-banner {
+  margin-top: 100px;
  }
 
  .navbar-toggler {

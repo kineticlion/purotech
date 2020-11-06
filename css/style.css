@@ -136,8 +136,11 @@ header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 10vmin 0px 50px grey, -10vmin 0px 50px grey;
-          box-shadow: 10vmin 0px 50px grey, -10vmin 0px 50px grey;
+  position: fixed !important;
+  z-index: 2;
+  top: 0;
+  right: 0%;
+  width: 100%;
 }
 
 header nav .navbar-brand img {
@@ -182,6 +185,10 @@ header nav .icon-bar {
   background-color: #003778;
   margin: 3px;
   height: 3px;
+}
+
+header #main-banner {
+  margin-top: 100px;
 }
 
 header .navbar-toggler {

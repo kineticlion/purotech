@@ -19,7 +19,7 @@
    <div class="scroll-indicator" id="section01"></div>
   </div>
   <header id="home">
-   <nav id="main-nav" class="navbar navbar-expand-lg navbar-light p-4">
+   <nav id="main-nav" class="navbar navbar-expand-lg navbar-light bg-white p-4">
     <div class="container d-flex align-items-end">
      <a class="navbar-brand" href="#"><img src="./images/logo.png" /></a>
      <button id="navbar-toggler" type="button" class="navbar-toggler x collapsed" data-toggle="collapse" data-target="#navbarNav">
@@ -52,7 +52,7 @@
     </div>
    </nav>
    <!--Purotech header banner-->
-   <div class="container-fluid p-0">
+   <div id="main-banner" class="container-fluid p-0">
     <img src="images/header/banner.png" class="img-fluid banner" />
    </div>
   </header>
@@ -331,15 +331,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <!--Custom JS-->
   <script>
-   window.onload = () => {
-    gsap.fromTo("#purotech-img", { opacity: 0 }, { opacity: 1, duration: 2, ease: Power3.easeIn }, "-=2");
-   };
+   gsap.fromTo("#purotech-img", { opacity: 0 }, { opacity: 1, duration: 2, ease: Power3.easeIn }, "-=2");
 
    //SCROLL INDICATOR
    easyScrollDots({
     fixedNav: false,
     fixedNavId: "",
     fixedNavUpward: false,
+   });
+
+   //STICKY NAV
+   $(() => {
+    let previousScroll = $(document).scrollTop();
+    $(window).scroll(() => {
+     const navHeight = $("#main-nav").outerHeight();
+     const newScroll = $(document).scrollTop();
+     if (previousScroll < newScroll && previousScroll > navHeight) {
+      $("#main-nav").fadeOut();
+     } else {
+      $("#main-nav").fadeIn();
+     }
+     previousScroll = $(document).scrollTop();
+    });
    });
 
    //NAV MENU COLLAPSE
@@ -349,6 +362,7 @@
     link.addEventListener("click", () => {
      if (window.innerWidth < 992) {
       toggleButton.click();
+      console.log(link.nextSibling);
      }
     })
    );
