@@ -87,14 +87,17 @@ navLinks.forEach(link =>
 const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
+const comments = document.querySelector('#comments');
 const formSubmitMessage = document.querySelector('#formSubmitMessage');
+const form = document.querySelector("#mainForm");
+const checkBoxes = document.querySelectorAll(".custom-control-input-black");
 
 const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|in|io)\b/;
 const phonePattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
-
 const validate = (...inputs) => {
   let isValidated = true;
+
   inputs.forEach(input => {
     switch (input.id) {
       case 'firstName':
@@ -106,6 +109,10 @@ const validate = (...inputs) => {
         break;
       case 'phone':
         input.value.match(phonePattern) === null || !input.value ? input.classList.add('error') : input.classList.remove('error');
+        break;
+      case 'comments':
+        !input.value ? input.classList.add('error') : input.classList.remove('error');
+        break;
       default:
         return false;
     }
@@ -116,54 +123,55 @@ const validate = (...inputs) => {
 
 const addListeners = (...inputs) => {
   inputs.forEach(input => {
-    console.log(input)
     input.addEventListener('input', () => {
       validate(input);
     })
   })
 }
 
-addListeners(firstName, lastName, email, phone);
+addListeners(firstName, lastName, email, phone, comments);
 
-
-document.querySelector('#mainForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const isValidated = validate(firstName, lastName, email, phone);
-  if (isValidated) formSubmitMessage.innerHTML = "Thanks for submitting!";
-})
-
-
-// #sendMailForm takes the data from the form with given ID
 $('#mainForm').submit(function (e) {
-  console.log("ji")
-  var data = {
-      'name': $('#firstName').val(),
-      'email': $('#email').val(),
-      'contact': $('#contactNumber').val(),
-      'message' : $('#message').val()
-  };
-  // POST data to the php file
-  $.ajax({ 
-      url: '../mail.php', 
-      data: data,
-      type: 'POST',
-      success: function (data) {
-    // For Notification
-          document.getElementById("sendMailForm").reset();
-          var $alertDiv = $(".mailResponse");
-          $alertDiv.show();
-          $alertDiv.find('.alert').removeClass('alert-danger alert-success');
-          $alertDiv.find('.mailResponseText').text("");
-          if(data.error){
-              $alertDiv.find('.alert').addClass('alert-danger');
-              $alertDiv.find('.mailResponseText').text(data.message);
-          }else{
-              $alertDiv.find('.alert').addClass('alert-success');
-              $alertDiv.find('.mailResponseText').text(data.message);
-          }
-      }
-  });
   e.preventDefault();
-});
+  const isValidated = validate(firstName, lastName, email, phone, comments);
 
-
+  if (isValidated) {
+    const demosRequired = [
+      { 'name': 'Puro Mobile', 'required': $('#puro-mobile').is(":checked") },
+      { 'name': 'Puro Payment', 'required': $('#puro-payment').is(":checked") },
+      { 'name': 'Puro Credit', 'required': $('#puro-credit').is(":checked") },
+    ].filter(demo => demo.required).map(demo => demo.name).join(", ");
+    
+    const data = {
+        'name': $('#firstName').val()+" "+$('#lastName').val(),
+        'email': $('#email').val(),
+        'contact': $('#phone').val(),
+        'message': $('#comments').val(),
+        'demo': demosRequired? demosRequired : "No",
+        'subscription': $('#subscribe-newsletter').is(":checked") ? "Yes" : "No",
+    };
+    
+    // POST data to the php file
+    $.ajax({ 
+        url: '../mail.php', 
+        data: data,
+        type: 'POST',
+        success: function (data) {
+          //  For Notification
+          document.getElementById("mainForm").reset();
+          
+          if (data.error){
+            formSubmitMessage.innerHTML = "Unable to send request. Try again later..";
+          }
+          else {
+            formSubmitMessage.innerHTML = "Thank You. Your Request has been submitted.";
+            setTimeout(() => {
+              $(formSubmitMessage).fadeTo(3000, 0);
+            }, 2000);
+          }
+        }
+    });
+  } else {
+    formSubmitMessage.innerHTML = "Please complete the form before submitting.";
+  }
+});  

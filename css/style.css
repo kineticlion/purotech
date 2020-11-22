@@ -534,6 +534,21 @@ header .banner {
   width: auto;
 }
 
+.error {
+  outline: 2px solid red;
+  border: none !important;
+}
+
+.error:focus {
+  outline: 2px solid red;
+}
+
+.checkbox-error {
+  border-color: red !important;
+  -webkit-box-shadow: 0 0 0 0.1rem red !important;
+          box-shadow: 0 0 0 0.1rem red !important;
+}
+
 .requestdemo {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -562,7 +577,11 @@ header .banner {
 
 .requestdemo form .form-control:hover {
   outline: 2px solid #003778;
-  border-color: transparent;
+}
+
+.requestdemo form .form-control:active {
+  -webkit-box-shadow: transparent;
+          box-shadow: transparent;
 }
 
 .requestdemo form .custom-control-input-black:focus ~ .custom-control-label::before {
