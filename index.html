@@ -14,6 +14,7 @@
    crossorigin="anonymous"
   />
   <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
  </head>
  <body>
   <!--Navbar-->
@@ -275,8 +276,13 @@
         </div>
        </div>
 
+       <div class="container d-flex flex-column justify-content-center align-items-center mt-4">
+        <div class="g-recaptcha" data-sitekey="6LcTN-oZAAAAAEDxxmFYatwXNwsIg0Jxwzk3lzRZ"></div>
+        <button type="submit" class="btn my-4">Submit</button>
+       </div>
+       <!--Recaptcha-->
+
        <!--/FORM COLUMN2-->
-       <button type="submit" class="btn my-4">Submit</button>
       </div>
       <p id="formSubmitMessage"></p>
      </form>
@@ -337,5 +343,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
   <!--Custom JS-->
   <script src="./js/custom.js"></script>
+  <script>
+   function onSubmit(token) {
+    console.log("Hi");
+    document.getElementById("demo-form").submit();
+   }
+  </script>
  </body>
 </html>

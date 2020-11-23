@@ -3,7 +3,7 @@
    header('Content-Type: application/json');
 
    
-   $to = "YOUR_EMAIL_ID";  // Server to send the email to
+   $to = "info@purocorp.com";  // Server to send the email to
 
    // Email details
    $name = $_POST['name'];
