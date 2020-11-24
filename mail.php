@@ -2,7 +2,6 @@
    // data sent in header are in JSON format
    header('Content-Type: application/json');
 
-   
    $to = "info@purocorp.com";  // Server to send the email to
 
    // Email details

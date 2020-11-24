@@ -132,10 +132,10 @@ const addListeners = (...inputs) => {
 addListeners(firstName, lastName, email, phone, comments);
 
 $('#mainForm').submit(function (e) {
+  $(formSubmitMessage).fadeTo(1000, 1);
   e.preventDefault();
   const isValidated = validate(firstName, lastName, email, phone, comments);
-
-  if (isValidated) {
+  if (isValidated && grecaptcha.getResponse()) {
     const demosRequired = [
       { 'name': 'Puro Mobile', 'required': $('#puro-mobile').is(":checked") },
       { 'name': 'Puro Payment', 'required': $('#puro-payment').is(":checked") },
@@ -160,18 +160,24 @@ $('#mainForm').submit(function (e) {
           //  For Notification
           document.getElementById("mainForm").reset();
           
-          if (data.error){
+          if (data.error) {
             formSubmitMessage.innerHTML = "Unable to send request. Try again later..";
           }
           else {
             formSubmitMessage.innerHTML = "Thank You. Your Request has been submitted.";
-            setTimeout(() => {
-              $(formSubmitMessage).fadeTo(3000, 0);
-            }, 2000);
           }
+          grecaptcha.reset();
+          $(formSubmitMessage).fadeTo(1000, 0);    
         }
     });
   } else {
-    formSubmitMessage.innerHTML = "Please complete the form before submitting.";
+    if (!isValidated) {
+      formSubmitMessage.innerHTML = "Please complete the form before submitting.";  
+      return;
+    } 
+    if (!grecaptcha.getResponse()) {
+      formSubmitMessage.innerHTML = "Please comple captcha to submit request.";
+    }
   }
+  
 });  
